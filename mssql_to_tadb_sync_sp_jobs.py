@@ -5,7 +5,7 @@ import General.toolbox as tb
 import pyodbc
 import pymysql
 import pandas as pd
-from DBConfig import db_config
+from db_config import db_config
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago

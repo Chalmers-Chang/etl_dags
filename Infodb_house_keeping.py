@@ -16,7 +16,7 @@ import zlib
 import json
 import time
 from datetime import datetime, timezone, timedelta
-from DBConfig import db_config
+from db_config import db_config
 import General.toolbox as tb
 
 # Chalmers 2024-12-04 20:59 commit

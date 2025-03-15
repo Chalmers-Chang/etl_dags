@@ -12,7 +12,7 @@ from utils.Slack import RobotAnnouncement
 import pymysql
 import zlib 
 import json
-from DBConfig import db_config
+from db_config import db_config
 import General.toolbox as tb
 
 # Chalmers 2024-12-12 18:07 commit
