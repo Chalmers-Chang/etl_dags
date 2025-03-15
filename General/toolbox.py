@@ -20,7 +20,7 @@ def password_decode(crypto_key, pass_word_encode):
     else :
         return None
     
- 
+  
 def load_json_config(file_path):
     # open json
     with open(file_path, 'r') as file:
