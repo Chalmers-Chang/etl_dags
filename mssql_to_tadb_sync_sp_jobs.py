@@ -1,7 +1,7 @@
 import os
 import time
 import json
-import General.toolbox as tb
+import general.toolbox as tb
 import pyodbc
 import pymysql
 import pandas as pd
