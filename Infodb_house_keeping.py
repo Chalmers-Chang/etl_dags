@@ -10,7 +10,6 @@ from airflow.models import Variable
 from airflow.utils.trigger_rule import TriggerRule
 from airflow.utils.task_group import TaskGroup
 from utils.Slack import RobotAnnouncement
-from AppSettings import getAppSettingsObj
 import pymysql
 import zlib
 import json
@@ -21,11 +20,6 @@ import general.toolbox as tb
 
 # Chalmers 2024-12-04 20:59 commit
 
-# environment var related to connection string
-# ======================================================================
-appSetting = getAppSettingsObj() # get proxy name
-# proxy = None
-proxy = appSetting.http_proxy
 
 # slack announcement var
 # ======================================================================
@@ -496,8 +490,10 @@ is_poc = Variable.get("is_poc")
 # get db config by environment
 if is_poc == '1':
     target_db_config = db_config("POC_MySQL_account")  
+    proxy = None
 else:
     target_db_config = db_config("PROD_MySQL_account")
+    proxy = db_config.proxy
 
 initial_etl_task_connection_config = etl_task_connection_config(None, None, None, None, None, target_db_config.username, target_db_config.password, target_db_config.host, target_db_config.db, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
 
